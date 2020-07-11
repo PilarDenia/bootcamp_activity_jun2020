@@ -40,8 +40,21 @@ class Community:
     def __init__(self, stations):
           self.stations = stations
 
-     def get_ids(self):
+
+    def get_ids(self):
         out = []
         for station in self.stations:
             out.append(station.id)
         return out
+
+
+    def station_search(self, station, search_type = "id"):
+          out = None
+          for sttn in self.stations:
+               if search_type == "name":
+                    if station.lower() in sttn.name.lower():
+                         out = sttn
+               elif search_type == "id":
+                    if sttn.id == station:
+                         out = sttn
+          return out
