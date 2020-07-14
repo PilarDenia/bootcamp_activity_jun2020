@@ -1,4 +1,3 @@
-from clases import Station, Community
 import math
 
 def dist_stations(sttn1, sttn2, community):
